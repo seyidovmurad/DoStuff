@@ -60,7 +60,7 @@ namespace DoStuff.Controllers
             {
                 ListId = list?.Id ?? -1,
                 Title = list?.Title ?? "Title",
-                Items = list?.TodoItems.OrderBy(i => i.CreatedDate).ToList() ?? new List<TodoItem>()
+                Items = list?.TodoItems.OrderByDescending(i => i.CreatedDate).ToList() ?? new List<TodoItem>()
             };
             return View(model);
         }
